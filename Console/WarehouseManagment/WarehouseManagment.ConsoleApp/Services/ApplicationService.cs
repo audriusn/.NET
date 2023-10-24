@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagment.ConsoleApp.Services
 {
-    internal class ApplicationService
+    public class ApplicationService
     {
         private WarehouseService _warehouseService;
 
@@ -18,21 +18,35 @@ namespace WarehouseManagment.ConsoleApp.Services
         {
             if (command.StartsWith("Add"))
             {
-                _warehouseService.Add();
+                string[] splitCommand = command.Split(" ");
+
+                _warehouseService.Add(splitCommand[1], splitCommand[2]);
             }
-            if (command.StartsWith("Remove"))
+            else if (command.StartsWith("Remove"))
             {
-                _warehouseService.Remove();
+                string[] splitCommand = command.Split(" ");
+
+                _warehouseService.Remove(splitCommand[1]);
             }
-            if (command.StartsWith("List"))
+            else if (command.StartsWith("List"))
             {
-                _warehouseService.List();
+                List<WarehouseItem> items = _warehouseService.GetAll();
+                foreach (WarehouseItem item in items)
+                {
+                    //Console.WriteLine("ItemName: " + item.Name + "ItemPrice:" + item.Price);
+                    Console.WriteLine($"ItemName: {item.Name} ItemPrice: {item.Price} ");
+                }
             }
-            if (command.StartsWith("Exit"))
+            else if (command.StartsWith("Exit"))
             {
-                return;
+                //super hacky
+                throw new Exception();
             }
-            Console.WriteLine("Incorrect command");
+            else
+            {
+                Console.WriteLine("Incorrect command");
+            }
+            
          
         }
     }
