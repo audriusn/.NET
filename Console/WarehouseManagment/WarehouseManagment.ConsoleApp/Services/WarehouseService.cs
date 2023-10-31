@@ -24,11 +24,15 @@ namespace WarehouseManagment.ConsoleApp.Services
         }
         public void Remove(string name)
         {
-            _items.Where(i => i.Name != name).ToList();
+            _items = _items.Where(i => i.Name != name).ToList();
         }
         public List<WarehouseItem> GetAll()  
         {
             return _items;
+        }
+        public void Exit(string name)
+        {
+            Environment.Exit(0);
         }
     }
 }

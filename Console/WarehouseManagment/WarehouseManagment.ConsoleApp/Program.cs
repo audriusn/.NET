@@ -12,7 +12,6 @@ namespace WarehouseManagment.ConsoleApp
             {
                 Console.WriteLine("Enter your command:");
                 var command = Console.ReadLine();
-
                 applicationService.Process(command);
             }      
         }

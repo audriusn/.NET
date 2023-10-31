@@ -3,5 +3,5 @@ The application should allow thwe following commands:
 
 'Add <ShopItem> <Price>' -> Should add item with <ShopItemName>
 'Remove <ShopItemName>' -> Should remove an item with name
-'List' -> Should list all the item informatiob
+'List' -> Should list all the item information
 'Exit' -> Should close the application
