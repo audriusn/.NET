@@ -25,7 +25,7 @@ namespace ShopManagmnetApp.Services
             {
                 Name = name,
                 Quantity = quantity
-            };        
+            };         
                 _items.Add(item);             
         }
         public void Remove(string name)
