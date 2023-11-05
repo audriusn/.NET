@@ -19,7 +19,6 @@ namespace ShopManagmnetApp.Services
         {
             try
             {
-
                 if (command.StartsWith("add"))
                 {
                     string[] splitCommand = command.Split(" ");
@@ -36,7 +35,7 @@ namespace ShopManagmnetApp.Services
                     List<ShopItem> items = _shopService.GetAll();
                     foreach (ShopItem item in items)
                     {
-                        Console.WriteLine($"ItemName: {item.Name} ItemPrice: {item.Price}");
+                        Console.WriteLine($"ItemName: {item.Name} ItemPrice: {item.Quantity}");
                     }
                 }
                 else if (command.StartsWith("set"))
@@ -54,7 +53,7 @@ namespace ShopManagmnetApp.Services
             {
                 Console.WriteLine(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Bad command name.You can only use 'Add', 'Remove', 'Show', 'Set' or 'Exit'");
             }

@@ -15,7 +15,7 @@ namespace ShopManagmnetApp.Services
             _items = new List<ShopItem>();
 
         }
-        public void Add(string name, string price)
+        public void Add(string name, string quantity)
         {
             if (_items.Any(si => si.Name == name))
             {
@@ -24,7 +24,7 @@ namespace ShopManagmnetApp.Services
             var item = new ShopItem()
             {
                 Name = name,
-                Price = price
+                Quantity = quantity
             };        
                 _items.Add(item);             
         }
@@ -40,11 +40,11 @@ namespace ShopManagmnetApp.Services
         {
             Environment.Exit(0);
         }
-        public void Update(string name, string price)
+        public void Update(string name, string quantity)
         {
-            foreach (var item in _items.Where(i => i.Name == name))
+            ShopItem shopItem = _items.First(i => i.Name == name);
             {
-                item.Price = price;
+                shopItem.Quantity = quantity;
             }
         }
     }
