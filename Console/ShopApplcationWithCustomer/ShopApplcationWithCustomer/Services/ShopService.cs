@@ -57,9 +57,9 @@ namespace ShopApplcationWithCustomer.Services
         {
             return _customer.Wallet;
         }
-        public void Topup(decimal sum)
+        public void Topup(decimal addmoney)
         {
-            _customer.Wallet = _customer.Wallet + sum;
+            _customer.Wallet += addmoney;
         }
 
         public void Buy(string name, int quantity)
@@ -95,6 +95,7 @@ namespace ShopApplcationWithCustomer.Services
             {
                 Console.WriteLine("Shop item is not found");
             }
+
         }
         public List<ShopItem> ShowCart()
         {
