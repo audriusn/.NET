@@ -1,0 +1,28 @@
+﻿New Solution please. (.NET 6 prefer)
+
+Create a shop application with following command:
+
+Shop management system should allow the following commands:
+"Add <ShopItemName> <Price> <Quantity>" -> Should add the following item
+"Remove <ShopItemName>" -> Should remove the following item.
+"Show" -> Should Display the following items. (name and quantities)
+"Set <ShopItemName> <quantity>" -> should update the quantity of the item
+
+Customer by default has 20 euros (Balance)
+
+"Show balance" -> Should display the balance of customer.
+"Topup <sum>" -> Should top the  customer's balance.
+"Show items" -> should display the names of bought items
+"Buy <ShopItem Name>  <Quantity>" - if user has enought money and the has enought itemas update the Customer balance.
+
+ Display diffrence error messages:
+	"Customes does not have enought funds"
+	"Shop item is not found"
+	"The command was not recognized"
+	 
+
+1. Additiniol requirement:
+	Your program should not crach when wrong item name or incorrect command is executed.
+	(try using  cry catch)
+2. Push your program to github.
+3. Handle "cae sensitice". For example "buy" or "topup"
