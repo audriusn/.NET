@@ -75,8 +75,9 @@ namespace ShopApplcationWithCustomer.Services
             }
             catch
             {
+                ArgumentException ex;
                 Console.WriteLine("Incorrect command. Please try again");
-            }
+                            }
         }
     }
 }
